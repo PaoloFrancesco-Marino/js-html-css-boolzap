@@ -69,3 +69,29 @@ body {
     font-size: 20px;
     color: #b1b1b1;
 }
+
+/* notify-bar left container */
+.notify-bar-sx {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 10px;
+    background: #8edafd;
+}
+
+.notify-bar-sx i {
+    margin-right: 10px;
+    padding: 18px 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    color: #8edafd;
+    font-size: 18px;
+    
+}
+
+.notify-bar-sx h5 {
+    text-decoration: underline;
+    color: #4f7485;
+
+}
+
