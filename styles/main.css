@@ -92,26 +92,31 @@ body {
 /* search bar */
 
 .search-bar {
-    display: flex;
-    align-items: center;
     padding: 10px;
-    height: 50px;
+    height: 58px;
     background-color: #fafafa; 
 }
 
-.search-bar  {
+.search-box {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #ccc;
 }
 
-.isear {
-    width: 100%;
+.search-box i {
+    padding: 10px 30px;
+    color: #b1b1b1;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
 }
 
-.input-box input {
-    width: 100%;
-    padding: 5px;
+.search-box input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
 }
+
 
 /* Contact List */
 
@@ -210,14 +215,46 @@ body {
 
 /* message content */
 .message-content {
-flex-grow: 1;
-background-image: url(../img/mine.jpg);
+    flex-grow: 1;
+    background-image: url(../img/mine.jpg);
+    padding: 35px 70px;
 }
 
 .message-content ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.message {
+    position: relative;
+    min-width: 150px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px 40px 20px 20px;
+
+}
+
+.message h6 {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: #b7b9bb;
+}
+
+.send {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.send-style {
+    background-color: #d5faba;
+}
+
+.received {
+    display: flex;
+    justify-content: flex-start;
 }
 
 /* bottom-bar right container */
@@ -229,3 +266,4 @@ background-image: url(../img/mine.jpg);
     background-color: #eaeaea;
     padding: 10px;
 }
+
