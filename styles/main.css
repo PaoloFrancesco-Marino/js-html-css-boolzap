@@ -228,6 +228,7 @@ body {
     flex-grow: 1;
     background-image: url(../img/mine.jpg);
     padding: 35px 70px;
+    overflow: auto;
 }
 
 .message-content ul {
@@ -239,10 +240,12 @@ body {
 .message {
     position: relative;
     min-width: 150px;
+    max-width: 80%;
     height: 100%;
     background-color: #fff;
     border-radius: 10px;
     padding: 15px 40px 20px 20px;
+    word-wrap: break-word;
 
 }
 
@@ -256,6 +259,7 @@ body {
 .send {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 10px;
 }
 
 .send-style {
@@ -265,6 +269,7 @@ body {
 .received {
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 10px;
 }
 
 /* bottom-bar right container */
@@ -288,5 +293,10 @@ body {
     margin: 0 35px;
     font-size: 20px;
     color: #b1b1b1;
+    cursor: pointer;
 }
 
+/* templates */
+.templates {
+    display: none;
+}
