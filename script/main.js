@@ -62,11 +62,4 @@ $(document).ready(function () {
 
     });
    
-
-    
-   
-
-
-
-
 }); //<-- end Ready
