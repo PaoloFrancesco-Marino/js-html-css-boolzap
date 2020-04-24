@@ -27,9 +27,15 @@
             margin-right: 15px;
         }
     /* icon top bar */
-        .top-bar-sx i,
-        .top-bar-dx i {
+
+        .top-bar-sx a,
+        .top-bar-dx a {
+            display: inline-block;
             margin-right: 20px;
+        }
+
+        .top-bar-sx a i,
+        .top-bar-dx a i {
             font-size: 20px;
             color: #b1b1b1;
         }
@@ -86,7 +92,6 @@
         .notify-bar-sx {
             display: flex;
             align-items: center;
-            height: 80px;
             padding: 10px 20px;
             background: #8edafd;
         }
@@ -101,9 +106,9 @@
             
         }
 
-        .notify-bar-sx h5 {
-            text-decoration: underline;
+        .notify-bar-sx a {
             margin-top: 5px;
+            font-size: 14px;
             color: #4f7485;
         }
 
@@ -122,7 +127,7 @@
             border-radius: 5px;
         }
 
-        .search-box i {
+        .search-box label i {
             padding: 10px 30px;
             color: #b1b1b1;
             background-color: #fff;
@@ -135,26 +140,32 @@
             flex-grow: 1;
             border: none;
             padding: 10px;
-            border-radius: 5px;
-            
+            border-radius: 5px;   
         }
 
 
     /* Contact List */
         .contact-list {
             flex-grow: 1;
-            overflow: auto;
+            overflow-y: auto;
         }
 
         .contact-list ul li {
             display: flex;
             align-items: center;
             padding: 15px 15px 15px 20px;
+            border-bottom: 1px solid #f5f5f5;
+            transition: background-color .2s;
+        }
+
+        .contact-list ul li:last-child {
+            border-bottom: 0;
         }
 
         /* li active */
-            .li-active {
+        .contact-list ul li.active {
                 background-color: #eaebeb;
+                border-bottom-color: transparent;
             }
 
         /* li hover */
@@ -200,6 +211,7 @@
             height: 70px;
             background-color: #eaeaea;
             padding: 10px;
+            border-left: 1px solid #ccc;
         }
     
         .user-select {
@@ -217,8 +229,16 @@
             flex-grow: 1;
             background-image: url(../img/mine.jpg);
             padding: 35px 70px;
-            overflow: auto;
+            overflow-y:  auto; 
         }
+        /* conversazioni */
+            .message-content .chat {
+                display: none;
+            }
+
+            .message-content .chat.active {
+                display: block;
+            }
 
         .message {
             position: relative;
