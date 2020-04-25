@@ -245,6 +245,7 @@
             min-width: 150px;
             max-width: 80%;
             height: 100%;
+            margin-bottom: 10px;
             background-color: #fff;
             border-radius: 10px;
             padding: 15px 40px 20px 20px;
@@ -259,19 +260,15 @@
         }
 
         .send {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 10px;
-        }
-
-        .send-style {
+            float: right;
             background-color: #d5faba;
+            clear: both;
         }
 
+    
         .received {
-            display: flex;
-            justify-content: flex-start;
-            margin-bottom: 10px;
+            float: left;
+            clear: both;
 }
 
 /* bottom-bar right container */
@@ -300,5 +297,6 @@
 
 /* templates */
     .templates {
+        list-style: none;
         display: none;
     }
