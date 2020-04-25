@@ -17,6 +17,7 @@ $(document).ready(function () {
     var inputSend = $('.bottom-bar-dx input'); //input
     var iconChange = $('.bottom-bar-dx i:last-child'); // Icona
     var searchBar = $('#search-input'); // search bar
+    var conversation = $('.contact-list ul li'); // refs li conversation
 
     // icon change on input focus
     inputSend.on(('focus blur'), function() {
@@ -54,6 +55,19 @@ $(document).ready(function () {
  
 
         });
+    });
+
+    //change conversation
+    conversation.click(function(){
+        var chatBlock = $(this).attr('data-conversazione');
+        console.log(chatBlock);
+
+        //rest class active
+
+        $('.chat').removeClass('active');
+
+        $('.chat[data-conversazione="'+ chatBlock +'"]').addClass('active');
+        
     });
 
 

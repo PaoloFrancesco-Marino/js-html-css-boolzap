@@ -215,6 +215,10 @@
         }
     
         .user-select {
+            display: none;
+        }
+
+        .user-select.active {
             display: flex;
             align-items: center;
         }
