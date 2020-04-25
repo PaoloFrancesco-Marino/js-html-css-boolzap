@@ -66,7 +66,11 @@ $(document).ready(function () {
 
         $('.chat').removeClass('active');
 
-        $('.chat[data-conversazione="'+ chatBlock +'"]').addClass('active');
+        $('.chat[data-conversazione="'+ chatBlock +'"]').toggleClass('active');
+
+        $('.user-select[data-conversazione="'+ chatBlock +'"]').toggleClass('active');
+        $('.user-select[data-conversazione="'+ chatBlock +'"]').prev().removeClass('active');
+        $('.user-select[data-conversazione="'+ chatBlock +'"]').next().removeClass('active');
         
     });
 
