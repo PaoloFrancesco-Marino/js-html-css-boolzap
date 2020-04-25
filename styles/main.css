@@ -247,7 +247,22 @@
                 display: block;
             }
 
+
+
         .message {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .message.send {
+            justify-content: flex-end;
+        }
+
+        .message.received {
+            justify-content: flex-start;
+        }
+
+        .message .message-style {
             position: relative;
             min-width: 150px;
             max-width: 80%;
@@ -259,24 +274,16 @@
             word-wrap: break-word;
         }
 
+        .message.send .message-style{
+            background-color: #d5faba;
+        }
+
         .message h6 {
             position: absolute;
             right: 5px;
             bottom: 5px;
             color: #b7b9bb;
         }
-
-        .send {
-            float: right;
-            background-color: #d5faba;
-            clear: both;
-        }
-
-    
-        .received {
-            float: left;
-            clear: both;
-}
 
 /* bottom-bar right container */
     .bottom-bar-dx {
