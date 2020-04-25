@@ -16,6 +16,7 @@ $(document).ready(function () {
     // refs   
     var inputSend = $('.bottom-bar-dx input'); //input
     var iconChange = $('.bottom-bar-dx i:last-child'); // Icona
+    var searchBar = $('#search-input'); // search bar
 
     // icon change on input focus
     inputSend.on(('focus blur'), function() {
@@ -33,6 +34,29 @@ $(document).ready(function () {
             smsSend(inputSend);
         }
     });
+
+    // search sidebar
+    searchBar.keyup(function () {
+        //select and obtained input val
+        var search = $(this).val().toLowerCase().trim();
+        console.log(search);
+        // loop with each in the contact
+        $('.contact-list  ul li').each(function(){
+            // actual contact selected
+            var user = $(this).find('.contact-user h4').text().toLowerCase();
+
+            // comparison research and contacts
+            if (user.includes(search)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+ 
+
+        });
+    });
+
+
    
 }); //<-- end Ready
 
@@ -83,9 +107,8 @@ function smsSend(input) {
             reply.addClass('received');
             //add message at chat active
             $('.message-content .chat.active ul').append(reply);
-            // scroll
+            // scroll at last message
             scrollViewSms()
-
         }, 1000);
     }
 
@@ -110,7 +133,7 @@ function actualTime() {
     return h + ':' + m;
 };
 
-// function scroll view message
+// function scroll view last message
 function scrollViewSms() {
     //select cointainer height
     var scroll = $('.chat.active').height();
