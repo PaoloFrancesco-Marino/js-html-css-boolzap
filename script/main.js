@@ -29,7 +29,7 @@ $(document).ready(function () {
 
     // send message with enter 
     inputSend.keyup(function (e) { 
-        if(e.which == 13) {
+        if(e.which == 13 || e.keycode == 13) {
             smsSend(inputSend);
         }
     });
@@ -53,12 +53,8 @@ function smsSend(input) {
         // add text at message
         newMessage.children('h5').text(inputMessage);
 
-        //add dinamin time
-        var data = new Date();
-        var h = addZero(data.getHours());
-        var m = addZero(data.getMinutes());
-        var time = h + ':' + m;
-
+        //add time sms
+        var time = actualTime();
         newMessage.children('h6').text(time);
 
         //add send style class
@@ -69,6 +65,28 @@ function smsSend(input) {
 
         // reset input 
         input.val('');
+
+        //scroll
+        scrollViewSms()
+
+        // add auto reply 1 second
+        setTimeout(function(){
+            var reply = $('.templates .message').clone();
+            // add class received
+            reply.addClass('received');
+            //add text message
+            reply.children('h5').text('ok');
+            //add time sms 
+            var time = actualTime();
+            reply.children('h6').text(time);
+            //add send style class
+            reply.addClass('received');
+            //add message at chat active
+            $('.message-content .chat.active ul').append(reply);
+            // scroll
+            scrollViewSms()
+
+        }, 1000);
     }
 
 };
@@ -82,3 +100,22 @@ function addZero (number) {
 
     return number;
 }
+
+// function-dinamic time 
+function actualTime() {
+    
+    var data = new Date();
+    var h = addZero(data.getHours());
+    var m = addZero(data.getMinutes());
+    return h + ':' + m;
+};
+
+// function scroll view message
+function scrollViewSms() {
+    //select cointainer height
+    var scroll = $('.chat.active').height();
+    //add container height at parent
+    $('.message-content').animate ({
+        scrollTop: scroll
+    }, 1000)
+};

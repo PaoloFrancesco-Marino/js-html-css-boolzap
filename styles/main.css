@@ -228,12 +228,19 @@
         .message-content {
             flex-grow: 1;
             background-image: url(../img/mine.jpg);
-            padding: 35px 70px;
             overflow-y:  auto; 
         }
+
         /* conversazioni */
             .message-content .chat {
                 display: none;
+                padding: 35px 70px;
+            }
+
+            .message-content .chat::after {
+                content: '';
+                display: table;
+                clear: both;
             }
 
             .message-content .chat.active {
