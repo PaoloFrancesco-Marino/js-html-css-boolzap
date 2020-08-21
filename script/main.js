@@ -88,7 +88,6 @@ $(document).ready(function () {
 /**
  * Function
 */
-
 // sms send function
 function smsSend(input) {
     //get text from the input
