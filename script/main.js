@@ -84,7 +84,6 @@ $(document).ready(function () {
         nameUser = '';
     });
 }); //<-- end Ready
-
 /**
  * Function
 */
