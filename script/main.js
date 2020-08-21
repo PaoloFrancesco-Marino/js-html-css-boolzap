@@ -26,13 +26,13 @@ $(document).ready(function () {
 
     // send message with click icon
     iconChange.click(function(){
-        smsSend(inputSend);
+        smsSend(inputSend.val());
     });
 
     // send message with enter 
     inputSend.keyup(function (e) { 
         if(e.which == 13 || e.keycode == 13) {
-            smsSend(inputSend);
+            smsSend(inputSend.val());
         }
     });
 
@@ -59,30 +59,35 @@ $(document).ready(function () {
 
     //change conversation
     conversation.click(function(){
+
+        // active select profile chat
+        $('.contact-list ul li.active').removeClass('active');
+        $(this).addClass('active');
+
+        // select active chat
         var chatBlock = $(this).attr('data-conversazione');
         console.log(chatBlock);
-
-        //rest class active
-
+        //reset chat
         $('.chat').removeClass('active');
+        // show active
+        $('.chat[data-conversazione="'+ chatBlock +'"]').addClass('active');
 
-        $('.chat[data-conversazione="'+ chatBlock +'"]').toggleClass('active');
+        // refresh chat header
+        var nameUser = $('.contact-list ul li.active .contact-wrapper .contact-user h4').text();
+        console.log(nameUser);
+        var imgUser = $('.contact-list ul li.active .profile-img').html();
+        console.log(imgUser);
+        // stamp user name + img profile
+        $('.top-bar-dx .user-select h4 .contact-name-select').text(nameUser);
+        $('.top-bar-dx .user-select .img-avatar').html(imgUser);
 
-        $('.user-select[data-conversazione="'+ chatBlock +'"]').toggleClass('active');
-        $('.user-select[data-conversazione="'+ chatBlock +'"]').prev().removeClass('active');
-        $('.user-select[data-conversazione="'+ chatBlock +'"]').next().removeClass('active');
-        
+        nameUser = '';
     });
-
-
-   
 }); //<-- end Ready
-
 
 /**
  * Function
 */
-
 
 // sms send function
 function smsSend(input) {
@@ -129,9 +134,8 @@ function smsSend(input) {
             scrollViewSms()
         }, 1000);
     }
-
 };
- 
+
 // add zero at time number < 10
 function addZero (number) {
 
@@ -160,3 +164,4 @@ function scrollViewSms() {
         scrollTop: scroll
     }, 1000)
 };
+
